@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -38,7 +38,7 @@ function AppContent() {
   const { theme, mode } = useTheme();
   const { isAuthenticated } = useAuth();
 
-  useEffect(() => {
+  React.useEffect(() => {
     document.body.className = `${mode} ${theme}`;
     document.documentElement.setAttribute('data-theme', mode);
   }, [theme, mode]);
