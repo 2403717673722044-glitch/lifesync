@@ -1,0 +1,282 @@
+.schedule-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.schedule-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.app.spidey .schedule-title {
+  color: #e0e0e0;
+}
+
+.schedule-subtitle {
+  color: #6b7280;
+  margin: 4px 0 0 0;
+}
+
+.app.spidey .schedule-subtitle {
+  color: #a0a0b0;
+}
+
+.schedule-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.schedule-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  color: white;
+}
+
+.app.pinky .schedule-add-btn {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff2d75 100%);
+}
+
+.app.spidey .schedule-add-btn {
+  background: linear-gradient(135deg, #e62429 0%, #1a1a2e 100%);
+}
+
+.schedule-date-picker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.app.spidey .schedule-date-picker {
+  background: #1a1a2e;
+}
+
+.date-input {
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.app.spidey .date-input {
+  background: #2a2a3e;
+  border-color: #3a3a4e;
+  color: #e0e0e0;
+}
+
+.date-label {
+  font-weight: 500;
+  color: #111827;
+}
+
+.app.spidey .date-label {
+  color: #e0e0e0;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.3s;
+}
+
+.app.spidey .schedule-item {
+  background: #1a1a2e;
+}
+
+.schedule-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.schedule-item-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.schedule-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+.app.spidey .schedule-time {
+  color: #a0a0b0;
+}
+
+.schedule-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.schedule-info h3 {
+  font-size: 1rem;
+  color: #111827;
+  margin: 0;
+}
+
+.app.spidey .schedule-info h3 {
+  color: #e0e0e0;
+}
+
+.schedule-category {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.schedule-category.work { background: #dbeafe; color: #1e40af; }
+.schedule-category.study { background: #e0e7ff; color: #3730a3; }
+.schedule-category.exercise { background: #d1fae5; color: #065f46; }
+.schedule-category.meal { background: #fed7aa; color: #92400e; }
+.schedule-category.sleep { background: #e0e7ff; color: #3730a3; }
+.schedule-category.leisure { background: #fce7f3; color: #9d174d; }
+.schedule-category.social { background: #fef3c7; color: #92400e; }
+.schedule-category.personal { background: #f3e8ff; color: #6b21a8; }
+.schedule-category.other { background: #f3f4f6; color: #374151; }
+
+.schedule-priority {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.schedule-priority.low { background: #d1fae5; color: #065f46; }
+.schedule-priority.medium { background: #fef3c7; color: #92400e; }
+.schedule-priority.high { background: #fed7aa; color: #92400e; }
+.schedule-priority.urgent { background: #fecaca; color: #991b1b; }
+
+.schedule-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.schedule-empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.schedule-form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.schedule-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.schedule-form-header h1 {
+  font-size: 2rem;
+  color: #111827;
+  margin: 0;
+}
+
+.app.spidey .schedule-form-header h1 {
+  color: #e0e0e0;
+}
+
+.schedule-form {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.app.spidey .schedule-form {
+  background: #1a1a2e;
+}
+
+.schedule-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .schedule-container {
+    padding: 16px;
+  }
+
+  .schedule-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .schedule-add-btn {
+    justify-content: center;
+  }
+
+  .schedule-date-picker {
+    flex-direction: column;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .schedule-item-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-item-actions {
+    justify-content: flex-end;
+  }
+
+  .schedule-form {
+    padding: 20px;
+  }
+}

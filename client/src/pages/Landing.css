@@ -1,0 +1,293 @@
+.landing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  transition: background 0.3s;
+}
+
+.app.pinky .landing {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff2d75 100%);
+}
+
+.app.spidey .landing {
+  background: linear-gradient(135deg, #e62429 0%, #1a1a2e 100%);
+}
+
+.landing-container {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  backdrop-filter: blur(10px);
+}
+
+.app.pinky .landing-container {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.app.spidey .landing-container {
+  background: rgba(26, 26, 46, 0.95);
+  color: #e0e0e0;
+}
+
+.landing-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.landing-logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.app.pinky .landing-logo {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff2d75 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app.spidey .landing-logo {
+  background: linear-gradient(135deg, #e62429 0%, #1a1a2e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-header h1 {
+  font-size: 2.5rem;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.landing-header p {
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+
+.app.spidey .landing-header h1 {
+  color: #e0e0e0;
+}
+
+.app.spidey .landing-header p {
+  color: #a0a0b0;
+}
+
+.theme-selection {
+  margin: 40px 0;
+}
+
+.theme-selection h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.app.spidey .theme-selection h2 {
+  color: #e0e0e0;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.theme-card {
+  padding: 24px;
+  border-radius: 16px;
+  border: 3px solid transparent;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: white;
+}
+
+.theme-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.theme-card.selected {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.app.spidey .theme-card {
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+.theme-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.theme-card h3 {
+  font-size: 1.2rem;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.theme-card p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.app.spidey .theme-card h3 {
+  color: #e0e0e0;
+}
+
+.app.spidey .theme-card p {
+  color: #a0a0b0;
+}
+
+.theme-preview {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.theme-preview span {
+  font-size: 0.8rem;
+}
+
+.landing-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 40px;
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #667eea;
+  color: white;
+}
+
+.app.pinky .btn-primary {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff2d75 100%);
+  box-shadow: 0 4px 12px rgba(255, 43, 117, 0.3);
+}
+
+.app.pinky .btn-secondary {
+  color: #ff6b9d;
+  border-color: #ff6b9d;
+}
+
+.app.pinky .btn-secondary:hover {
+  background: #ff6b9d;
+  color: white;
+}
+
+.app.spidey .btn-primary {
+  background: linear-gradient(135deg, #e62429 0%, #1a1a2e 100%);
+  box-shadow: 0 4px 12px rgba(230, 36, 41, 0.3);
+}
+
+.app.spidey .btn-secondary {
+  color: #e62429;
+  border-color: #e62429;
+}
+
+.app.spidey .btn-secondary:hover {
+  background: #e62429;
+  color: white;
+}
+
+.landing-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.app.spidey .landing-features {
+  border-top-color: #2a2a3e;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.app.spidey .feature-item {
+  color: #a0a0b0;
+}
+
+.feature-item span:first-child {
+  font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  .landing-container {
+    padding: 30px 20px;
+  }
+
+  .theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .landing-header h1 {
+    font-size: 2rem;
+  }
+
+  .landing-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    text-align: center;
+  }
+}

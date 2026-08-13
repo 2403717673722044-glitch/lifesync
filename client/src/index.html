@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanu Dashboard</title>
+    <!-- Importing Inter Font for a neat, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 1. CSS Reset & Variables (The Dark Theme Palette) */
+        :root {
+            --bg-dark: #0A0D14;
+            --surface-dark: #161B26;
+            --surface-light: #222A3A;
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --accent-purple: #8B5CF6;
+            --accent-purple-dim: #4C1D95;
+            --border-color: #2A3441;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            /* Subtle gradient background for depth */
+            background: radial-gradient(circle at 10% 20%, #111827 0%, #0A0D14 90%);
+        }
+
+        /* 2. Main Card Container */
+        .dashboard-card {
+            background-color: var(--surface-dark);
+            width: 100%;
+            max-width: 480px;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 3. Header Section (Good Morning) */
+        .header {
+            margin-bottom: 32px;
+        }
+
+        .greeting-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .greeting {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .wave-emoji {
+            font-size: 28px;
+            /* Subtle float animation */
+            animation: float 3s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(15deg); }
+        }
+
+        .subtitle {
+            margin-top: 6px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* 4. The Neat Toggle Switch */
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--surface-light);
+            padding: 6px 6px 6px 18px; /* Padding inside the pill */
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+            width: fit-content;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            margin-top: 24px;
+        }
+
+        .toggle-container:hover {
+            border-color: var(--accent-purple);
+            background-color: #283045;
+        }
+
+        .toggle-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-right: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 44px;
+            height: 24px;
+            background-color: #3A4354;
+            border-radius: 999px;
+            transition: background-color 0.3s ease;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bouncy animation */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Active State (When clicked) */
+        .toggle-container.active .toggle-switch {
+            background-color: var(--accent-purple);
+        }
+
+        .toggle-container.active .toggle-switch::after {
+            transform: translateX(20px);
+        }
+
+        /* 5. Additional Content to make it look like a real app */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .stat-card {
+            background-color: var(--surface-light);
+            padding: 16px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* 6. Top Accent Bar (To match your red bar image, but refined) */
+        .top-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #FF4D4D, #8B5CF6);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-card">
+        <!-- Top Accent Bar -->
+        <div class="top-accent"></div>
+
+        <!-- Header Section -->
+        <div class="header">
+            <div class="greeting-wrapper">
+                <h1 class="greeting">Good Morning, Thanu!</h1>
+                <span class="wave-emoji">👋</span>
+            </div>
+            <p class="subtitle">Here's your life overview for today</p>
+        </div>
+
+        <!-- Interactive Toggle Switch -->
+        <div class="toggle-container" id="toggleBtn">
+            <span class="toggle-text">Thanu</span>
+            <div class="toggle-switch"></div>
+        </div>
+
+        <!-- Pseudo Dashboard Content (To show presentation) -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Tasks Pending</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">85%</div>
+                <div class="stat-label">Mood Score</div>
+            </div>
+        </div>
+        
+        <p style="font-size: 11px; color: #4A5568; text-align: center; margin-top: 24px; font-weight: 500;">
+            Interaction Design • Dark Mode
+        </p>
+    </div>
+
+    <!-- Simple JavaScript to make the toggle clickable -->
+    <script>
+        const toggleContainer = document.getElementById('toggleBtn');
+        
+        toggleContainer.addEventListener('click', () => {
+            // Toggle the 'active' class
+            toggleContainer.classList.toggle('active');
+            
+            // Optional: Change text based on state
+            const textElement = toggleContainer.querySelector('.toggle-text');
+            if (toggleContainer.classList.contains('active')) {
+                textElement.textContent = 'Thanu (Active)';
+                textElement.style.color = '#8B5CF6'; // Purple text when active
+            } else {
+                textElement.textContent = 'Thanu';
+                textElement.style.color = '#F1F5F9'; // White text when inactive
+            }
+        });
+    </script>
+</body>
+</html>

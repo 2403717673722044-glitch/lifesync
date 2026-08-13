@@ -1,0 +1,604 @@
+.expense-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.expense-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.expense-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.app.spidey .expense-title {
+  color: #e0e0e0;
+}
+
+.expense-subtitle {
+  color: #6b7280;
+  margin: 4px 0 0 0;
+}
+
+.app.spidey .expense-subtitle {
+  color: #a0a0b0;
+}
+
+.expense-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.expense-add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  color: white;
+}
+
+.app.pinky .expense-add-btn {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff2d75 100%);
+}
+
+.app.spidey .expense-add-btn {
+  background: linear-gradient(135deg, #e62429 0%, #1a1a2e 100%);
+}
+
+.expense-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+.app.spidey .summary-card {
+  background: #1a1a2e;
+}
+
+.summary-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.app.spidey .summary-label {
+  color: #a0a0b0;
+}
+
+.summary-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.summary-card.income .summary-value { color: #10b981; }
+.summary-card.expense .summary-value { color: #ef4444; }
+.summary-card.balance .summary-value { color: #667eea; }
+
+.app.pinky .summary-card.balance .summary-value { color: #ff6b9d; }
+.app.spidey .summary-card.balance .summary-value { color: #e62429; }
+
+.expense-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.app.spidey .filter-btn {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+  color: #e0e0e0;
+}
+
+.filter-btn:hover {
+  border-color: #667eea;
+}
+
+.filter-btn.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.app.pinky .filter-btn.active {
+  background: #ff6b9d;
+  border-color: #ff6b9d;
+}
+
+.app.spidey .filter-btn.active {
+  background: #e62429;
+  border-color: #e62429;
+}
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.3s;
+}
+
+.app.spidey .expense-item {
+  background: #1a1a2e;
+}
+
+.expense-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.expense-item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.expense-icon {
+  font-size: 1.8rem;
+}
+
+.expense-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.expense-info h3 {
+  font-size: 1rem;
+  color: #111827;
+  margin: 0;
+}
+
+.app.spidey .expense-info h3 {
+  color: #e0e0e0;
+}
+
+.expense-category {
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.app.spidey .expense-category {
+  background: #2a2a3e;
+  color: #c0c0d0;
+}
+
+.expense-type {
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.expense-type.income {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.expense-type.expense {
+  background: #fecaca;
+  color: #991b1b;
+}
+
+.expense-item-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.expense-amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.expense-amount.income {
+  color: #10b981;
+}
+
+.expense-amount.expense {
+  color: #ef4444;
+}
+
+.expense-date {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.app.spidey .expense-date {
+  color: #a0a0b0;
+}
+
+.expense-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: transparent;
+  color: #6b7280;
+}
+
+.action-btn:hover {
+  background: #f3f4f6;
+}
+
+.app.spidey .action-btn:hover {
+  background: #2a2a3e;
+}
+
+.action-btn.edit:hover {
+  color: #667eea;
+}
+
+.action-btn.delete:hover {
+  color: #ef4444;
+}
+
+.expense-empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.expense-empty h3 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.app.spidey .expense-empty h3 {
+  color: #e0e0e0;
+}
+
+.expense-empty p {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.app.spidey .expense-empty p {
+  color: #a0a0b0;
+}
+
+.empty-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.empty-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  color: white;
+}
+
+.app.pinky .empty-btn {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff2d75 100%);
+}
+
+.app.spidey .empty-btn {
+  background: linear-gradient(135deg, #e62429 0%, #1a1a2e 100%);
+}
+
+.expense-form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.expense-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.expense-form-header h1 {
+  font-size: 2rem;
+  color: #111827;
+  margin: 0;
+}
+
+.app.spidey .expense-form-header h1 {
+  color: #e0e0e0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 8px;
+}
+
+.close-btn:hover {
+  color: #111827;
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+
+.app.spidey .close-btn:hover {
+  color: #e0e0e0;
+  background: #2a2a3e;
+}
+
+.expense-form {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.app.spidey .expense-form {
+  background: #1a1a2e;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.app.spidey .form-group label {
+  color: #c0c0d0;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  font-family: inherit;
+  background: white;
+  color: #333;
+}
+
+.app.spidey .form-input,
+.app.spidey .form-select,
+.app.spidey .form-textarea {
+  background: #2a2a3e;
+  border-color: #3a3a4e;
+  color: #e0e0e0;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.app.pinky .form-input:focus {
+  border-color: #ff6b9d;
+  box-shadow: 0 0 0 4px rgba(255, 107, 157, 0.1);
+}
+
+.app.spidey .form-input:focus {
+  border-color: #e62429;
+  box-shadow: 0 0 0 4px rgba(230, 36, 41, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.app.spidey .form-actions {
+  border-top-color: #2a2a3e;
+}
+
+.form-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.form-btn.cancel {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.form-btn.cancel:hover {
+  background: #e5e7eb;
+}
+
+.app.spidey .form-btn.cancel {
+  background: #2a2a3e;
+  color: #a0a0b0;
+}
+
+.app.spidey .form-btn.cancel:hover {
+  background: #3a3a4e;
+}
+
+.form-btn.submit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.form-btn.submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+}
+
+.app.pinky .form-btn.submit {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff2d75 100%);
+}
+
+.app.spidey .form-btn.submit {
+  background: linear-gradient(135deg, #e62429 0%, #1a1a2e 100%);
+}
+
+.form-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.expense-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.app.pinky .spinner {
+  border-top-color: #ff6b9d;
+}
+
+.app.spidey .spinner {
+  border-top-color: #e62429;
+}
+
+@media (max-width: 768px) {
+  .expense-container {
+    padding: 16px;
+  }
+
+  .expense-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .expense-add-btn {
+    justify-content: center;
+  }
+
+  .expense-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .expense-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .expense-item-right {
+    justify-content: space-between;
+  }
+
+  .expense-form {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
